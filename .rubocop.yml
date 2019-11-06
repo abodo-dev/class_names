@@ -5,9 +5,6 @@ require:
 AllCops:
   TargetRubyVersion: 2.3
   TargetRailsVersion: 4.2
-  Exclude:
-    - db/schema.rb
-    - 'vendor/**/*'
 
 Metrics/LineLength:
   Max: 125
@@ -50,8 +47,6 @@ Style/SymbolArray:
 
 Metrics/MethodLength:
   Max: 30
-  Exclude:
-    - "db/**/*"
 
 ClassLength:
   Max: 500
@@ -80,10 +75,4 @@ Metrics/PerceivedComplexity:
 
 Metrics/BlockLength:
   Max: 30
-  Exclude:
-    - "db/**/*"
     - "test/**/*"
-
-# HttpPositionalArguments doesnt work with rails 4: https://github.com/bbatsov/rubocop/issues/3629
-Rails/HttpPositionalArguments:
-  Enabled: false

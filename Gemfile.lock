@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    class_names (0.1.0)
+    class_names (0.1.1)
 
 GEM
   remote: https://rubygems.org/
