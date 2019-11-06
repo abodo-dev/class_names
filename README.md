@@ -62,3 +62,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/abodo-dev/class_names. This project is intended to be a safe, welcoming space for collaboration.
+
+## Performance
+
+|                                  | user     | system   | total    | real        |
+|----------------------------------|----------|----------|----------|-------------|
+| With 1 array and 1 string value  | 0.660000 | 0.000000 | 0.660000 | (0.657901)  |
+| With 5 array and 5 string values | 0.640000 | 0.000000 | 0.640000 | (0.650673)  |
+| With 10 array values             | 0.450000 | 0.000000 | 0.450000 | (0.449735)  |
+| With 10 string values            | 0.320000 | 0.010000 | 0.330000 | (,0.320911) |
