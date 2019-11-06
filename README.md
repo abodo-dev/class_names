@@ -26,15 +26,15 @@ Inside of a view:
 
 ```html+erb
   <!-- @conditional = false -->
-  <span class="<%= class_names({some: true, classy: true, [:truthy, :falsy] => @conditional} %>">
+  <span class="<%= class_names(some: true, classy: true, [:truthy, :falsy] => @conditional) %>">
   <!-- equal to -->
-  <span class="<%= class_names('some', 'classy', [:truthy, :falsy] => @conditional %>">
+  <span class="<%= class_names('some', 'classy', [:truthy, :falsy] => @conditional %>)">
   <!-- => <span class="some classy falsy"></span> -->
 ```
 
 ```haml
   // @conditional = true
-  %span{class: class_names({some: true, classy: false, [:truthy, :falsy] => @conditional})}
+  %span{class: class_names(some: true, classy: false, [:truthy, :falsy] => @conditional)}
   // equal to
   %span{class: class_names('some', falsy: false, [:truthy, :falsy] => @conditional)}
   // => <span class="some truthy"></span>
