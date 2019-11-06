@@ -1,9 +1,9 @@
-require 'view_helper'
+require 'class_names/view_helper'
 
 module ClassNames
   class Railtie < Rails::Railtie
-    initializer "css_class_string.view_helpers" do
-      ActionView::Base.send :include, ViewHelpers
+    initializer "class_names.view_helper" do
+      ActionView::Base.send :include, ViewHelper
     end
   end
 end
