@@ -1,11 +1,11 @@
 module ClassNames
   class Helper
-    def initialize(*classes)
-      options = classes.last.is_a?(::Hash) ? classes.pop : {}
+    def initialize(*class_map)
+      options = class_map.last.is_a?(::Hash) ? class_map.pop : {}
 
       @classes = {}
       # default to true on class_names("truthy") like calls
-      @classes = classes.map do |class_name|
+      @classes = class_map.map do |class_name|
         if class_name.is_a?(::Hash)
           class_name.each do |class_key, class_value|
             next if !class_value
