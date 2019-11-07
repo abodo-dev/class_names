@@ -8,7 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Harris Thompson"]
   spec.email         = ["hthompson@abodo.com"]
 
-  spec.summary       = %q{A simple helper to conditionally join class names together.}
+  spec.summary       = %q{A simple helper to conditionally join class names together}
+  spec.description   = %q{The class_names function takes any number of arguments which can be a string or hash. The argument 'foo' is short for { foo: true }. If the value associated with a given key is falsy (nil or false), that key won't be included in the output.}
   spec.homepage      = "https://github.com/abodo-dev/class_names"
   spec.license       = "MIT"
 
