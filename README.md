@@ -90,7 +90,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/abodo-dev/class_names. This project is intended to be a safe, welcoming space for collaboration.
 
 ## Performance
-#### On 50,000 calls. The unit of time is seconds.
+On 50,000 calls. The unit of time is seconds.
 
 |                                  | user     | system   | total    | real        |
 |----------------------------------|----------|----------|----------|-------------|
