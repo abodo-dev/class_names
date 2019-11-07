@@ -51,18 +51,16 @@ Inside of a view:
   <!-- => <span class="falsy"></span> -->
   
   <!-- Lots of different types of arguments -->
-  <!-- @conditional = false -->
-  <span class="<%= class_names(some: true, classy: true, [:truthy, :falsy] => @conditional, 'foo') %>">
+  <span class="<%= class_names(some: true, classy: true, [:truthy, :falsy] => false, 'foo') %>">
   <!-- equal to -->
-  <span class="<%= class_names('some', 'classy', [:truthy, :falsy] => @conditional %>, 'foo')">
+  <span class="<%= class_names('some', 'classy', [:truthy, :falsy] => false %>, 'foo')">
   <!-- => <span class="some classy falsy foo"></span> -->
 ```
 
 ```haml
-  // @conditional = true
-  %span{class: class_names(some: true, classy: false, [:truthy, :falsy] => @conditional)}
+  %span{class: class_names(some: true, classy: false, [:truthy, :falsy] => true)}
   // equal to
-  %span{class: class_names('some', falsy: false, [:truthy, :falsy] => @conditional)}
+  %span{class: class_names('some', falsy: false, [:truthy, :falsy] => true)}
   // => <span class="some truthy"></span>
 ```
 
