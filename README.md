@@ -1,5 +1,7 @@
 # ClassNames
 
+[![Gem Version](https://badge.fury.io/rb/class_names.svg)](https://badge.fury.io/rb/class_names)
+
 ClassNames is a simple helper to conditionally join class names together.
 
 Influenced by: https://www.npmjs.com/package/classnames and https://github.com/nLight/css-class-string
