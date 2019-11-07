@@ -25,11 +25,37 @@ Or install it yourself as:
 Inside of a view:
 
 ```html+erb
+  <span class="<%= class_names('foo', 'bar') %>">
+  <!-- => <span class="foo bar"></span> -->
+  
+  <span class="<%= class_names('foo', { bar: true }) %>">
+  <!-- => <span class="foo bar"></span> -->
+  
+  <span class="<%= class_names('foo-bar': true) %>">
+  <!-- => <span class="foo-bar"></span> -->
+  
+  <span class="<%= class_names('foo-bar': false) %>">
+  <!-- => <span class=""></span> -->
+  
+  <span class="<%= class_names(foo: true, bar: true) %>">
+  <!-- => <span class="foo bar"></span> -->
+  
+  <span class="<%= class_names({ foo: true, bar: true }) %>">
+  <!-- => <span class="foo bar"></span> -->
+  
+  <!-- Simple ternary replacement with multiple hashes !-->
+  <span class="<%= class_names([:truthy, :falsy] => true) %>">
+  <!-- => <span class="truthy"></span> -->
+  
+  <span class="<%= class_names([:truthy, :falsy] => false) %>">
+  <!-- => <span class="falsy"></span> -->
+  
+  <!-- Lots of different types of arguments -->
   <!-- @conditional = false -->
-  <span class="<%= class_names(some: true, classy: true, [:truthy, :falsy] => @conditional) %>">
+  <span class="<%= class_names(some: true, classy: true, [:truthy, :falsy] => @conditional, 'foo') %>">
   <!-- equal to -->
-  <span class="<%= class_names('some', 'classy', [:truthy, :falsy] => @conditional %>)">
-  <!-- => <span class="some classy falsy"></span> -->
+  <span class="<%= class_names('some', 'classy', [:truthy, :falsy] => @conditional %>, 'foo')">
+  <!-- => <span class="some classy falsy foo"></span> -->
 ```
 
 ```haml
@@ -62,3 +88,13 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/abodo-dev/class_names. This project is intended to be a safe, welcoming space for collaboration.
+
+## Performance
+On 50,000 calls. The unit of time is seconds.
+
+|                                  | user     | system   | total    | real        |
+|----------------------------------|----------|----------|----------|-------------|
+| With 1 array and 1 string value  | 0.660000 | 0.000000 | 0.660000 | (0.657901)  |
+| With 5 array and 5 string values | 0.640000 | 0.000000 | 0.640000 | (0.650673)  |
+| With 10 array values             | 0.450000 | 0.000000 | 0.450000 | (0.449735)  |
+| With 10 string values            | 0.320000 | 0.010000 | 0.330000 | (0.320911)  |
