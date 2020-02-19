@@ -45,7 +45,7 @@ Inside of a view:
   <span class="<%= class_names({ foo: true, bar: true }) %>">
   <!-- => <span class="foo bar"></span> -->
   
-  <!-- Simple ternary replacement with multiple hashes !-->
+  <!-- Simple ternary replacement with multiple hashes -->
   <span class="<%= class_names([:truthy, :falsy] => true) %>">
   <!-- => <span class="truthy"></span> -->
   
