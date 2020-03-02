@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    class_names (0.1.1)
+    class_names (0.1.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.8.5)
-    rake (10.5.0)
+    minitest (5.14.0)
+    rake (13.0.1)
 
 PLATFORMS
   ruby
@@ -15,8 +15,8 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   class_names!
-  minitest (~> 5.0)
-  rake (~> 10.0)
+  minitest
+  rake
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
